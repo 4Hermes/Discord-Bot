@@ -1,0 +1,43 @@
+{
+  "name": "@4hermes/discord-bot",
+  "displayName": "Hermes Discord Bot",
+  "version": "0.0.0",
+  "description": "A Discord Bot that allows users to interact/interface with Project Hermes.",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://git.4lch4.io/Hermes/Discord-Bot",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dplr:start": "doppler run -p $CRONICLE_PROJECT --config $CRONICLE_CONFIG --command='DEBUG=$DEBUG node ./dist/index.js'",
+    "build": "tsc",
+    "pretty": "prettier --write .",
+    "pretty:git": "prettier --write . && if [[ $(git status -s) ]]; then git commit -a -m 'chore(pretty): project prettied'; fi",
+    "lint": "prettier -c .",
+    "test": "echo 'There are currently no tests available.'",
+    "scan": "snyk monitor && snyk code test",
+    "preversion": "npm run pretty:git",
+    "postversion": "if [[ $(git status -s) ]]; then git commit -a -m 'chore(npm): version bump'; fi"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "4lch4"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.4lch4.io:22022/Hermes/Discord-Bot.git"
+  },
+  "author": {
+    "name": "4lch4",
+    "email": "hey@4lch4.email",
+    "url": "https://4lch4.com"
+  },
+  "bugs": {
+    "email": "bugs@4lch4.email",
+    "url": "https://git.4lch4.io/Hermes/Discord-Bot/issues"
+  }
+}
